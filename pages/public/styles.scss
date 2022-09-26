@@ -1,0 +1,66 @@
+@import '@/styles/variables.scss';
+
+.public-section {
+  display: grid; 
+  grid-template-columns: 1.4fr 0.6fr; 
+  grid-template-rows: .1fr .1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". stack"
+    ". stack"
+    ". stack"; 
+  flex-wrap: wrap;
+  min-height: calc(100vh - 47px);
+  &>* {
+    padding: 40px 10px 15px 10px;
+    margin: 10px;
+    border-radius: 8px;
+    @include lightBlue('background', .05);
+    @include flex();
+    flex-direction: column;
+    position: relative;
+
+    & .header {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      @include white('color', .4);
+      font-size: 18px;
+    }
+  }
+
+  & .person-info-list {
+    &-item {
+      font-size: 16px;
+    }
+  }
+  & .experience-list {
+    &-item {
+
+    }
+  }
+  & .projects-list {
+    &-item {
+      width: 50%;
+      min-width: 150px;
+      margin: 5px 0;
+      @include lightBlue('background', .1);
+      padding: 3px 5px;
+      border-radius: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+    }
+  }
+  & .tech-stack-list {
+    grid-area: stack;
+    &-item {
+      @include lightBlue('background', .1);
+      padding: 3px 5px;
+      border-radius: 6px;
+      margin: 5px 0;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import '@/styles/variables.scss';
+
+.navbar {
+  @include lightBlue('background-color', .08);
+  ul {
+    @include flex(flex-end);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 15px 13px 15px;
+    border-bottom: 2px solid transparent;
+    &.active {
+      @include lightBlue('border-color', .5);
+    }
+  }
+  &-item {
+    background-color: transparent;
+    transition: background-color .3s ease, border-color .3s ease;
+    cursor: pointer;
+    @include flex();
+  
+    &:hover {
+      @include lightBlue('background', .05);
+    }
+    &:active {
+      @include lightBlue('background', .1);
+    }
+
+  }
+}

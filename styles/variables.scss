@@ -1,0 +1,21 @@
+$default-border-color: #e4e4e4;
+
+
+@mixin grey($property: 'color', $opacity: 1) {
+  #{$property}: rgba(100, 100, 100, $opacity);
+}
+@mixin white($property: 'color', $opacity: 1) {
+  #{$property}: rgba(255, 255, 255, $opacity);
+}
+@mixin darkBlue($property: 'color', $opacity: 1) {
+  #{$property}: rgba(15, 29, 37, $opacity);
+}
+@mixin lightBlue($property: 'color', $opacity: 1) {
+  #{$property}: rgba(111, 202, 255, $opacity);
+}
+
+@mixin flex($justify: center, $align: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}

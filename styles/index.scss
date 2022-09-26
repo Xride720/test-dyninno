@@ -1,0 +1,95 @@
+@import './variables.scss';
+
+body {
+  margin: 0;
+  @include darkBlue('background');
+  @include white('color', .9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+  outline: none;
+  background: transparent;
+  padding: 7px 12px;
+  border: none;
+  box-shadow: none;
+  @include white();
+  transition: background-color .3s ease;
+
+  &:focus {
+    border-color: red;
+    @include lightBlue('background', .05);
+  }
+}
+
+button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color .3s ease, background-color .3s ease;
+
+  &.default-btn {
+    @include white('border-color', .5);
+    @include lightBlue('background', .05);
+    &:hover {
+      @include white('border-color', .8);
+      @include lightBlue('background', .35);
+    }
+  }
+
+  &.ghost-btn {
+    @include white('border-color', .5);
+    &:hover {
+      @include white('border-color', .8);
+    }
+  }
+
+  &.primary-btn {
+    @include lightBlue('background', .5);
+    &:hover {
+      @include lightBlue('border-color', .8);
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgb(15, 29, 37) inset !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.85) !important;
+    caret-color: rgba(255, 255, 255, 0.85);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-scroll {
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+  background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  box-shadow: inset 0 0 3px 0px rgb(0, 180, 212);
+  }
+}

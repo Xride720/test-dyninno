@@ -1,0 +1,78 @@
+@import '@/styles/variables.scss';
+
+.protected-section {
+  min-height: calc(100vh - 47px);
+  max-height: calc(100vh - 47px);
+
+  & .users-list {
+    @include flex();
+    flex-direction: column;
+    &-item {
+      width: 50%;
+      margin: 5px 0;
+      @include lightBlue('background', .1);
+
+      border-radius: 6px;
+      @include flex();
+
+      & .avatar {
+        padding: 15px 7.5px 15px 15px;
+        @include flex();
+        & img {
+          border-radius: 6px;
+        }
+      }
+      & .user-info {
+        width: 100%;
+        padding: 15px 15px 15px 7.5px;
+        @include flex(space-around, flex-start);
+        flex-direction: column;
+        &-name {
+          font-size: 20px;
+        }
+        &-dateofbirth {
+          font-size: 14px;
+          @include white('color', .4);
+        }
+        &-contact {
+          font-size: 16px;
+          @include white('color', .8);
+  
+        }
+        &-location {
+          font-size: 16px;
+          @include white('color', .8);
+        }
+      }
+
+    }
+
+    button {
+      margin: 5px 0 10px 0;
+    }
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  position: fixed;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+}
+
+@keyframes rotation {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+} 
